@@ -11,20 +11,32 @@
 			href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap"
 			rel="stylesheet"
 		/>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+			integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U="
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js"
+			integrity="sha256-3mBEX8I0uMLF7+AUjJeTCelosuorzYpqwBMBPDTyQqY="
+			crossorigin="anonymous"
+		></script>
 	</head>
 	<body>
 		<div class="page-wrapper">
 			<div class="header">
 				<div class="top-nav">
-					<div class="top-nav__logo">
-						<img src="./images/dipo.svg" alt="dipo-logo" />
-					</div>
-					<div class="top-nav__link">
-						<ul>
-							<li>Home</li>
-							<li>About</li>
-							<li>Contact</li>
-						</ul>
+					<div class="top-nav-animate-container">
+						<div class="top-nav__logo">
+							<img src="./images/dipo.svg" alt="dipo-logo" />
+						</div>
+						<div class="top-nav__link">
+							<ul>
+								<li>Home</li>
+								<li>About</li>
+								<li>Contact</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -33,15 +45,21 @@
 					<div class="intro-area__wrapper">
 						<div class="hero-title">
 							<div></div>
-							<div>
+							<div style="width:100%">
 								<div class="hero-title1">
-									<p>Different</p>
+									<p class="hero-t-1">Different</p>
+									<p></p>						
+									
 								</div>
 								<div class="hero-title2">
-									<p>Make</p>
+									<p class="hero-t-2">Make</p>
+									<p></p>
+									
 								</div>
 								<div class="hero-title3">
-									<p>a breakthrough</p>
+									<p class="hero-t-3">a breakthrough</p>
+									<p></p>
+									
 								</div>
 							</div>
 						</div>
@@ -99,7 +117,10 @@
 									slave poster
 								</p>
 							</div>
-							<div class="film-btn"><p>View Project</p></div>
+							<div class="film-btn-container">
+								<div class="film-btn"><p>View Project</p></div>
+							</div>
+							
 						</div>
 					</div>
 					<div class="prj3">
@@ -119,8 +140,7 @@
 							<div class="prj3-sub-title">
 								<p>
 									The poster call me by your name is designed based on
-									the sweetness <br />
-									of the two guys in the movie and typo style poster
+									the sweetness of the two guys in the movie <br/> and typo style poster
 									design
 								</p>
 							</div>
@@ -152,7 +172,7 @@
 								<img src="./images/ID7.png" alt="mega-1" />
 							</div>
 						</div>
-						<div class="fa-prj"></div>
+						
 					</div>
 				</div>
 				<div class="vision-area">
@@ -201,8 +221,87 @@
 					<img src="./images/us.svg" alt="us" class="us">
 				</div>
 			</div>
+			<div class="form">
+				<h1>send us message</h1>
+				<input type="text" class="email">
+				<input type="text" class="message">
+				<div class="sendbtn">
+					<p>Send</p>
+				</div>
+				
+			</div>
+			<div class="footer">
+				<img src="./images/dipo.svg" alt="logo">
+				<div class="info">
+					<div class="expertise">
+						<h1>Expertise</h1>
+						<p>Brand consultant</p>
+       					<p>Brand strategy</p>
+       					<p>Logotype & mark</p>
+       					<p>Advertising</p>
+					</div>	
+					<div class="address">
+						<h1>Office</h1>
+						<p>01, Vo Van Ngan street</p>
+						<p> Linh Trung,Thu Duc district</p>
+						<p> Ho Chi Minh city</p>
+					</div>
+					<div class="contact">
+						<h1>Contact</h1>
+						<p>036 426 7789</p>
+						<p>info@dipo.com</p>
+					</div>
+					<div class="follow">
+						<h1>Follow</h1>
+						<p>Facebook</p>
+						<p>Instagram</p>
+						<p>LinkedIn</p>
+					</div>
+				</div>
 
-			<div class="footer"></div>
+			</div>
 		</div>
+		<script>
+			TweenMax.fromTo(
+				'.hero-logo',
+				0.5,
+				{
+					scale: 1,
+				},
+				{
+					scale:1.1,
+					ease: Expo.easeIn,
+					delay: 3,
+					repeat: -1,
+					yoyo: true,
+					yoyoEase: Expo.easeOut,
+				}
+			);
+			TweenMax.from('.hero-title1',1,{
+				left:'-100%',
+				opacity:0,
+				ease: Expo.easeInOut,
+				
+			})
+			TweenMax.from('.hero-title2',1,{
+				left:'-100%',
+				opacity:0,
+				ease: Expo.easeInOut,
+				delay:0.5,
+			})
+			TweenMax.from('.hero-title3',1,{
+				left:'-100%',
+				opacity:0,
+				ease: Expo.easeInOut,
+				delay:1,
+			})
+			TweenMax.from('.top-nav-animate-container',2,{
+				top:'-100%',
+				opacity:0,
+				ease: Expo.easeInOut,				
+			})
+			
+
+		</script>
 	</body>
 </html>
