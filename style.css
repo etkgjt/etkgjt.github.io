@@ -10,6 +10,8 @@ body {
 	font-size: 62.5%;
 	background-color: #000;
 	overflow-x: hidden;
+	position: relative;
+	cursor: none;
 }
 p,
 h1 {
@@ -21,6 +23,53 @@ h1 {
 div {
 	/* overflow: hidden; */
 }
+.child-pointer{
+	position: fixed;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #000;
+	border: 1px solid #F7941D;
+	z-index: 999;
+	pointer-events: none;
+	mix-blend-mode: difference;
+	opacity: 1;
+	transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, 0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity;
+	transform: scale(1);
+	box-sizing: border-box;
+	top:0;
+	left: 0;
+}
+.parent-pointer {
+	top:0;
+	left: 0;
+	z-index: 9999;
+	position: fixed;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background-color: #F7941D;
+}
+.active {
+	position: fixed;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background-color: #F7941D;
+	z-index: 999;
+	pointer-events: none;
+	mix-blend-mode: difference;
+	opacity: 1;
+	transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, 0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity;
+	transform: scale(3);
+	
+}
+.parent-active {
+	background-color: #000;
+}
+
+
+
 .page-wrapper {
 	width: 100vw;
 	min-height: 100vh;
@@ -92,19 +141,22 @@ div {
 .top-nav__link > ul > li::after {
 	content: '';
 	position: absolute;
-	width: 0;
+	width: 100%;
 	height: 4px;
 	background-color: #fff;
 	bottom: -8px;
 	left: 0;
+	transform-origin: center right;
+	transform: scaleX(0);
+	transition: transform 0.3s ;
+	float: right;
 	
 	
 }
 .top-nav__link > ul > li:hover::after {
-	
-	width: 100%;
-	
-	transition: width .3s ease-in-out ;
+	transform: scaleX(1);
+	transform-origin: center left;
+	transition: transform .3s ease-in-out ;
 	
 }
 
@@ -222,7 +274,7 @@ div {
 .prj1 {
 	width: 100%;
 	height: 100vh;
-	background-color: yellow;
+	/* background-color: yellow; */
 	/* position: absolute;
 	top: 0;
 	z-index: 999;
@@ -366,15 +418,17 @@ div {
 	grid-column: 1/2;
 	grid-row: 1/4;
 	width: 100%;
+	height: 100%;
 	position: relative;
 }
 .film-img > img {
 	position: absolute;
 	height: 100%;
+	width: auto;
 	transform-origin: right;
-	top: 0;
+	bottom: 0px;
 	right: 0;
-	z-index: 999;
+	/* z-index: 999; */
 }
 .ani-poster {
 	grid-column: 2/3;
@@ -382,11 +436,13 @@ div {
 	display: flex;
 	justify-content: center;
 	justify-content: flex-start;
+	width: 100%;
+	height: 100%;
 	position: relative;
 }
 .ani-poster > img {
 	position: absolute;
-	bottom: 0;
+	top: 0;
 	left: 0;
 	height: 100%;
 	width: auto;
@@ -460,6 +516,9 @@ div {
 }
 .prj3-img1 {
 	z-index: 1;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 .prj3-img2 {
 	height: 90%;
@@ -478,7 +537,6 @@ div {
 .prj3-sub-title > p {
 	font-size: 2.5rem;
 	color: #fff;
-
 	text-transform: none;
 }
 .prj3-btn {

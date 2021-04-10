@@ -11,6 +11,7 @@
 			href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap"
 			rel="stylesheet"
 		/>
+		<script src="./jquery-3.5.1.min.js"></script>
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
 			integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U="
@@ -25,7 +26,12 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
 	</head>
 	<body>
+		<div class="child-pointer"></div>
+		<div class="parent-pointer"></div>
+		
 		<div class="page-wrapper">
+			
+		<div class="parent-pointer"></div>
 			<!-- <div class="header">
 				<div class="top-nav">
 					<div class="top-nav-animate-container">
@@ -47,9 +53,9 @@
 					<div class="top-nav">
 						<div class="top-nav-animate-container">
 							<div class="top-nav__logo">
-								<img src="./images/dipo.svg" alt="dipo-logo" />
+								<img src="./images/dipo.svg" alt="dipo-logo" class="flag"/>
 							</div>
-							<div class="top-nav__link">
+							<div class="top-nav__link flag">
 								<ul>
 									<li>Home</li>
 									<li>About</li>
@@ -63,7 +69,7 @@
 					<div class="intro-area__wrapper">
 						<div class="hero-title">
 							<div></div>
-							<div style="width:100%">
+							<div style="width:100%" class="flag">
 								<div class="hero-title1">
 									<p class="hero-t-1">Different</p>
 									<p></p>						
@@ -85,20 +91,20 @@
 							<div class="sub-hero-title-animate-container">
 							<div class="sub1">
 								<p></p>
-								<p>Expertise</p>
+								<p class="flag">Expertise</p>
 							</div>
 							<div style="position:relative;">
 								<div class="sub2">
-									<p style="margin-top: 20px;">Brand consultant</p>
-									<p style="margin-top: 10px;">Brand strategy</p>
-									<p style="margin-top: 10px;">Logotype & mark</p>
-									<p style="margin-top: 10px;">Advertising</p>
+									<p class="flag" style="margin-top: 20px;">Brand consultant</p>
+									<p class="flag" style="margin-top: 10px;">Brand strategy</p>
+									<p class="flag" style="margin-top: 10px;">Logotype & mark</p>
+									<p class="flag" style="margin-top: 10px;">Advertising</p>
 								</div>
 							</div>
 							
 						</div>
 						</div>
-						<div class="hero-logo">
+						<div class="hero-logo flag">
 							<img src="./images/o.svg" alt="logo" />
 						</div>
 					</div>
@@ -108,14 +114,14 @@
 						<div class="prj1">
 							<div class="bg-container">
 								<div class="layer">
-									<div class="lord-poster">
+									<div class="lord-poster flag">
 										<img src="./images/poster_.png" alt="" />
 									</div>
-									<div class="lord-title">
+									<div class="lord-title flag">
 										<img src="./images/lord-title.svg" alt="lord-title" />
 									</div>
 									<div class="lord-sub-title">
-										<p class="lord-sub-ani">
+										<p class="lord-sub-ani flag">
 											Poster lord of the rings inspired by the rings from
 											the movie 3 were given to the elves, beautiful
 											creatures and wisdom, 7 were given to the dwarves,
@@ -124,7 +130,7 @@
 										<p></p>
 									</div>
 									<div class="view-btn">
-										<div class="view-btn-ani">
+										<div class="view-btn-ani flag">
 											<p>View Project</p>
 										</div>
 										
@@ -135,13 +141,13 @@
 						</div>
 						<div class="prj2">
 							<div class="prj2-wrapper">
-								<div class="film-img">
+								<div class="film-img flag">
 									<img src="./images/Image_1.png" alt="child" />
 								</div>
-								<div class="ani-poster">
+								<div class="ani-poster flag">
 									<img src="./images/12years.svg" alt="12-years" />
 								</div>
-								<div class="film-subtitle">
+								<div class="film-subtitle flag">
 									<div>
 									<p>
 										Inspired by the miserable stalemate of these human
@@ -150,7 +156,7 @@
 									</p>
 								</div>
 								</div>
-								<div class="film-btn-container">
+								<div class="film-btn-container flag">
 									<div class="film-btn"><p>View Project</p></div>
 								</div>
 								
@@ -173,11 +179,13 @@
 								/>
 							</div>
 							<div class="prj3-sub-title">
-								<p>
-									The poster call me by your name is designed based on
-									the sweetness of the two guys in the movie <br/> and typo style poster
-									design
-								</p>
+								<div>
+									<p>
+										The poster call me by your name is designed based on
+										the sweetness of the two guys in the movie <br/> and typo style poster
+										design
+									</p>
+								</div>
 							</div>
 							<div class="prj3-btn">
 								<p>View Project</p>
@@ -296,6 +304,7 @@
 
 			</div>
 		</div>
+		
 		<script>
 			// TweenMax.fromTo(
 			// 	'.hero-logo',
@@ -314,6 +323,65 @@
 			// 		yoyoEase: Expo.easeOut,
 			// 	}
 			// );
+			let cursor = $(".child-pointer");
+			let follower = $(".parent-pointer");
+			let flag = $(".flag");
+			flag.on('mouseenter',function(){
+					cursor.addClass("active");
+					//follower.addClass("parent-active");						
+			})
+			flag.on('mouseleave',function(e){
+				if (flag !== document.elementFromPoint(e.clientX, e.clientY)) {
+					cursor.removeClass("active");
+					//follower.removeClass("parent-active");
+				}
+				return;
+    
+			})
+			// $(".top-nav__logo").mouseenter(()=>{
+			// 	cursor.addClass("active");
+			// 		follower.add("parent-active");	
+			// })
+			
+			// $(".top-nav__logo").mouseleave( function() {
+			// 		// console.log('Remove ne ')
+			// 		cursor.removeClass("active");
+			// 		follower.removeClass("parent-active");
+							
+			// });
+					
+				
+				
+				
+					
+			// let flag = '';
+			$(document).on("mousemove", function(e) {
+					let mouseX = e.clientX - cursor.width()/2 ;
+					let mouseY = e.clientY - cursor.height()/2;
+					let followX = e.clientX - follower.width()/2 ;
+					let followY = e.clientY - follower.height()/2 ;
+					gsap.to('.parent-pointer', {
+							
+							left: followX,
+							top: followY,
+							delay:0,
+							duration:0.3,												
+					});
+					gsap.to('.child-pointer', {						
+							left: mouseX,
+							top: mouseY,
+							delay:0.016,
+							duration:0.3,						
+					});
+			});
+
+			
+			
+
+			
+
+
+
 			TweenMax.from('.hero-logo',1.5,{
 				right:'-10%',
 				opacity:0,
@@ -351,6 +419,12 @@
 				ease: Expo.easeInOut,
 				delay:0.5				
 			})
+			TweenMax.from('.top-nav-animate-container',2,{
+				top:'-100%',
+				opacity:0,
+				ease: Expo.easeInOut,
+				delay:0.7				
+			})
 			// TweenMax.fromTo(
 			// 	'.hero-logo',
 			// 	0.3,
@@ -372,11 +446,12 @@
 				scrollTrigger: {
 					trigger:'.prj1',
 					start:'10% center',
-					end: 'bottom bottom',
+					end: '150% bottom',
 					//markers:true,
-					toggleActions:'none none resume none',	
+					toggleActions:'start none resume none',	
 					 scrub:1				
 				},
+				
 			})
 			let tl2 = gsap.timeline({
 				scrollTrigger: {
@@ -385,6 +460,17 @@
 					end:() =>innerWidth * 1.6,
 					toggleActions:'none none resume none',	
 					 scrub:1				
+				},
+			})
+			gsap.from('.prj1',{
+				backgroundColor: 'rgba(0, 0, 0, 1)',
+				scrollTrigger: {
+					trigger:'.intro-area__wrapper',
+					start:'80% center',
+					end: '190% bottom',
+					toggleActions:'none none resume none',	
+					scrub:3,
+					// pin:true,				
 				},
 			})
 			gsap.from('.layer',{
@@ -403,28 +489,28 @@
 
 
 			tl1.from('.lord-poster',{
-					left:'-100%',
+					left:'-30%',
 				opacity:0,
 			 	duration:1.5,
 				ease: Expo.easeInOut,
 			},0);
 			
 			tl1.from ('.lord-title',{
-					left:'600%',
+					left:'30%',
 					opacity:0,
 					duration:1.5,
 					 delay:0,
 					ease: Expo.easeInOut,
 			},0.5)
 			tl1.from ('.lord-sub-title',{
-					right:'-100%',
+					right:'-30%',
 					opacity:0,
 					duration:1.5,
 					 delay:0,
 					ease: Expo.easeInOut,
 			},0.8)
 			tl1.from ('.view-btn-ani',{
-					bottom:'-100%',
+					bottom:'-30%',
 					opacity:0,
 					duration:1.5,
 					 delay:0,
@@ -432,7 +518,7 @@
 			},1)
 			//Prj1 out
 			tl2.to('.lord-poster',{
-					left:'-100%',
+					left:'-30%',
 				opacity:0,
 			 	duration:1.5,
 				ease: Expo.easeInOut,
@@ -442,21 +528,21 @@
 				ease: Expo.easeInOut,
 			},1)
 			.to ('.lord-title',{
-					left:'150%',
+					left:'30%',
 					opacity:0,
 					duration:1.5,
 					 delay:0,
 					ease: Expo.easeInOut,
 			},0)
 			.to ('.lord-sub-title',{
-					right:'-100%',
+					right:'-30%',
 					opacity:0,
 					duration:1.5,
 					 delay:0,
 					ease: Expo.easeInOut,
 			},0)
 			.to ('.view-btn-ani',{
-					bottom:'-100%',
+					bottom:'-30%',
 					opacity:0,
 					duration:1.5,
 					 delay:0,
@@ -484,11 +570,11 @@
 			});
 			gsap.from('.film-img > img', {
 				top:'-100%',
-				// opacity:1,
+				opacity:0,
 				scrollTrigger: {
-					trigger: ".horizontal-gr",
-					start: () => innerWidth*0.55,
-					end: () => innerWidth * 1.7,										
+					trigger: ".prj3",
+					start: '-250% center',
+					end: '-90% center',										
 					scrub:1
 				}
 			})
@@ -513,7 +599,7 @@
 					trigger: ".prj3",
 					start:'-120% center',
 					end: '-90% center',										
-					markers:true,
+					// markers:true,
 					toggleActions: "restart none none reverse",
 					scrub:true
 				},
@@ -539,8 +625,8 @@
 				scrollTrigger: {
 					trigger:'.prj3',
 					start:'-65% center',
-					end: '+=1200',										
-					markers:true,
+					end: '+=100%',										
+					// markers:true,
 					toggleActions:'none none resume none',	
 					 scrub:1				
 				},
@@ -549,6 +635,10 @@
 				left:'50%',
 				opacity:0,												
 			},0).to('.film-img > img', {
+				left:'-50%',
+				opacity:0,				
+			},0)
+			.to('.film-subtitle > div', {
 				right:'50%',
 				opacity:0,				
 			},0)
@@ -556,14 +646,34 @@
 				left:'50%',
 				opacity:0,												
 			},0)
-			.to('.film-subtitle > div', {
-				right:'50%',
-				opacity:0,				
-			},0)
+			
 			.to('.film-btn', {
 				bottom:'-200%',
 				opacity:0,				
 			},0)
+
+			let tl4 = gsap.timeline({
+				scrollTrigger: {
+					trigger:'.prj3',
+					start:'top center',
+					end: '20% center',															
+					toggleActions:'none none resume none',	
+					 scrub:3				
+				},
+			})
+			tl4.from('.prj3-img1', {
+				top:'-10%',
+				opacity:0,												
+			},0)
+			.from('.prj3-img2', {
+				top:'-10%',
+				opacity:0,												
+			},1)
+			
+
+
+
+
 			
 		</script>
 	</body>
