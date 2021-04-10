@@ -383,7 +383,6 @@
 					trigger:'.prj1',
 					start: () =>innerWidth,
 					end:() =>innerWidth * 1.6,
-					// markers:true,
 					toggleActions:'none none resume none',	
 					 scrub:1				
 				},
@@ -394,7 +393,6 @@
 					trigger:'.intro-area__wrapper',
 					start:'80% center',
 					end: '190% bottom',
-					// markers:true,
 					toggleActions:'none none resume none',	
 					scrub:3,
 					//pin:true,				
@@ -404,13 +402,6 @@
 
 
 
-			//Prj1 in
-			// tl1.from('.layer',{
-			// 		// left:'-100%',
-			// 	backgroundColor: 'rgba(0, 0, 0, 1)',
-			//  	duration:1.5,
-			// 	ease: Expo.easeInOut,
-			// },0);
 			tl1.from('.lord-poster',{
 					left:'-100%',
 				opacity:0,
@@ -419,7 +410,7 @@
 			},0);
 			
 			tl1.from ('.lord-title',{
-					right:'-100%',
+					left:'600%',
 					opacity:0,
 					duration:1.5,
 					 delay:0,
@@ -445,43 +436,33 @@
 				opacity:0,
 			 	duration:1.5,
 				ease: Expo.easeInOut,
-			},0);
-			tl2.to ('.lord-title',{
+			},0)
+			.to('.layer',{				
+				backgroundColor: 'rgba(0, 0, 0, 1)',			 	
+				ease: Expo.easeInOut,
+			},1)
+			.to ('.lord-title',{
+					left:'150%',
+					opacity:0,
+					duration:1.5,
+					 delay:0,
+					ease: Expo.easeInOut,
+			},0)
+			.to ('.lord-sub-title',{
 					right:'-100%',
 					opacity:0,
 					duration:1.5,
 					 delay:0,
 					ease: Expo.easeInOut,
-			},0.5)
-			tl2.to ('.lord-sub-title',{
-					right:'-100%',
-					opacity:0,
-					duration:1.5,
-					 delay:0,
-					ease: Expo.easeInOut,
-			},0.8)
-			tl2.to ('.view-btn-ani',{
+			},0)
+			.to ('.view-btn-ani',{
 					bottom:'-100%',
 					opacity:0,
 					duration:1.5,
 					 delay:0,
 					ease: Expo.easeInOut,
-			},1)
-			gsap.to('.layer',{
-					// left:'-100%',
-				backgroundColor: 'rgba(0, 0, 0, 1)',
-			 	// duration:1.5,
-				ease: Expo.easeInOut,
-				scrollTrigger: {
-					trigger:'.prj1',
-					start: () =>innerWidth * 1.4,
-					end:() =>innerWidth * 1.8,
-					// markers:true,
-					//toggleActions:'none none resume none',	
-					 scrub:3,
-
-				},
-			},0);
+			},0)
+			
 
 
 
@@ -495,34 +476,32 @@
 				scrollTrigger: {
 					trigger: ".horizontal-gr",
 					start: "top top",
-					end: () => innerWidth * 2,
+					end: () => innerWidth * 1.8,
 					scrub: true,
 					pin: true,
 					anticipatePin: 1,
-					// markers:true,
 				}
 			});
 			gsap.from('.film-img > img', {
 				top:'-100%',
-				opacity:0,
+				// opacity:1,
 				scrollTrigger: {
 					trigger: ".horizontal-gr",
 					start: () => innerWidth*0.55,
-					end: () => innerWidth * 2,										
-					// markers:true,
+					end: () => innerWidth * 1.7,										
 					scrub:1
 				}
 			})
 			
 			gsap.from('.ani-poster > img', {
-				left:'-100%',
+				left:'-50%',
 				opacity:0,
 				scrollTrigger: {
 					trigger: ".prj3",
 					start:'-120% center',
 					end: '-90% center',										
-					// markers:true,
-					scrub:1
+					toggleActions: "restart none none reverse",
+					scrub:true
 				},
 				
 				
@@ -534,8 +513,9 @@
 					trigger: ".prj3",
 					start:'-120% center',
 					end: '-90% center',										
-					// markers:true,
-					scrub:1
+					markers:true,
+					toggleActions: "restart none none reverse",
+					scrub:true
 				},
 				
 				
@@ -547,63 +527,43 @@
 					trigger: ".prj3",
 					start:'-120% center',
 					end: '-90% center',										
-					// markers:true,
-					scrub:1
+					toggleActions: "restart none none reverse",
+					scrub:true
 				},
 				
 				
 			})
-			gsap.to('.film-img > img', {
-				right:'100%',
-				opacity:0,
+
+
+			let tl3 = gsap.timeline({
 				scrollTrigger: {
-					trigger: ".horizontal-gr",
-					start: () => innerWidth * 0.6,
-					end: () => innerWidth * 2.2,										
+					trigger:'.prj3',
+					start:'-65% center',
+					end: '+=1200',										
 					markers:true,
-					scrub:1
-				}
-			})
-			
-			gsap.to('.ani-poster > img', {
-				left:'100%',
-				opacity:0,
-				scrollTrigger: {
-					trigger: ".prj3",
-					start:'-65% center',
-					end: '0% center',										
-					// markers:true,
-					scrub:1
+					toggleActions:'none none resume none',	
+					 scrub:1				
 				},
-				
-				
 			})
-			gsap.to('.film-subtitle > div', {
-				right:'100%',
-				opacity:0,
-				scrollTrigger: {
-					trigger: ".prj3",
-					start:'-65% center',
-					end: '0% center',										
-					// markers:true,
-					scrub:1
-				},
-				
-				
-			})
-			gsap.to('.film-btn', {
+			tl3.to('.ani-poster > img', {
+				left:'50%',
+				opacity:0,												
+			},0).to('.film-img > img', {
+				right:'50%',
+				opacity:0,				
+			},0)
+			.to('.ani-poster > img', {
+				left:'50%',
+				opacity:0,												
+			},0)
+			.to('.film-subtitle > div', {
+				right:'50%',
+				opacity:0,				
+			},0)
+			.to('.film-btn', {
 				bottom:'-200%',
-				opacity:0,
-				scrollTrigger: {
-					trigger: ".prj3",
-					start:'-65% center',
-					end: '-50% top',										
-					// markers:true,
-					scrub:1
-				},
-				
-				
-			})
+				opacity:0,				
+			},0)
 			
 		</script>
 	</body>
