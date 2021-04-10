@@ -329,32 +329,14 @@
 			flag.on('mouseenter',function(){
 					cursor.addClass("active");
 					//follower.addClass("parent-active");						
-			})
+			});
 			flag.on('mouseleave',function(e){
-				if (flag !== document.elementFromPoint(e.clientX, e.clientY)) {
+				
 					cursor.removeClass("active");
 					//follower.removeClass("parent-active");
-				}
-				return;
+				
     
-			})
-			// $(".top-nav__logo").mouseenter(()=>{
-			// 	cursor.addClass("active");
-			// 		follower.add("parent-active");	
-			// })
-			
-			// $(".top-nav__logo").mouseleave( function() {
-			// 		// console.log('Remove ne ')
-			// 		cursor.removeClass("active");
-			// 		follower.removeClass("parent-active");
-							
-			// });
-					
-				
-				
-				
-					
-			// let flag = '';
+			});
 			$(document).on("mousemove", function(e) {
 					let mouseX = e.clientX - cursor.width()/2 ;
 					let mouseY = e.clientY - cursor.height()/2;
@@ -446,7 +428,7 @@
 				scrollTrigger: {
 					trigger:'.prj1',
 					start:'10% center',
-					end: '150% bottom',
+					end: '120% bottom',
 					//markers:true,
 					toggleActions:'start none resume none',	
 					 scrub:1				
