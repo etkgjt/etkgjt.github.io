@@ -24,14 +24,17 @@
 		></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+		<script src="./locomotive.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>		
 	</head>
 	<body>
 		<div class="child-pointer"></div>
 		<div class="parent-pointer"></div>
 		
+		<div data-scroll-container>
 		<div class="page-wrapper">
 			
-		<div class="parent-pointer"></div>
+		
 			<!-- <div class="header">
 				<div class="top-nav">
 					<div class="top-nav-animate-container">
@@ -49,7 +52,7 @@
 				</div>
 			</div> -->
 			<div class="content">
-				<div class="header">
+				<div class="header" data-scroll-section>
 					<div class="top-nav">
 						<div class="top-nav-animate-container">
 							<div class="top-nav__logo">
@@ -65,9 +68,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="intro-area">
+				<div class="intro-area" data-scroll-section>					 
 					<div class="intro-area__wrapper">
-						<div class="hero-title">
+						<div class="hero-title" data-scroll-speed="2">
 							<div></div>
 							<div style="width:100%" class="flag">
 								<div class="hero-title1">
@@ -107,20 +110,26 @@
 						<div class="hero-logo flag">
 							<img src="./images/o.svg" alt="logo" />
 						</div>
+						<div class="scroll-down-container">
+							<div class="line-down">
+								<p></p>
+							</div>
+						</div>
 					</div>
+									
 				</div>
 				<div class="project-area">
-					<div class="horizontal-gr">
-						<div class="prj1">
+
+						<div class="prj1" data-scroll-section>
 							<div class="bg-container">
 								<div class="layer">
-									<div class="lord-poster flag">
+									<div class="lord-poster tiltE flag" data-scroll="true" data-scroll-speed="0.5" data-easing="Sine.easeOut">
 										<img src="./images/poster_.png" alt="" />
 									</div>
-									<div class="lord-title flag">
+									<div class="lord-title flag" data-scroll="true" data-scroll-speed="1">
 										<img src="./images/lord-title.svg" alt="lord-title" />
 									</div>
-									<div class="lord-sub-title">
+									<div class="lord-sub-title" data-scroll="true" data-scroll-speed="2" data-easing="Sine.easeOut">
 										<p class="lord-sub-ani flag">
 											Poster lord of the rings inspired by the rings from
 											the movie 3 were given to the elves, beautiful
@@ -129,7 +138,7 @@
 										</p>
 										<p></p>
 									</div>
-									<div class="view-btn">
+									<div class="view-btn" data-scroll="true" data-scroll-speed="2.5" data-easing="Sine.easeOut">
 										<div class="view-btn-ani flag">
 											<p>View Project</p>
 										</div>
@@ -139,15 +148,15 @@
 								
 							</div>
 						</div>
-						<div class="prj2">
+						<div class="prj2" data-scroll-section>
 							<div class="prj2-wrapper">
-								<div class="film-img flag">
-									<img src="./images/Image_1.png" alt="child" />
+								<div class="film-img flag tiltE">
+									<img src="./images/Image_1.png" alt="child" data-scroll="true" data-scroll-speed="3" />
 								</div>
-								<div class="ani-poster flag">
-									<img src="./images/12years.svg" alt="12-years" />
+								<div class="ani-poster flag tiltE">
+									<img src="./images/12years.svg" alt="12-years"  data-scroll="true" data-scroll-speed="1.3"/>
 								</div>
-								<div class="film-subtitle flag">
+								<div class="film-subtitle flag" data-scroll="true" data-scroll-speed="2">
 									<div>
 									<p>
 										Inspired by the miserable stalemate of these human
@@ -157,69 +166,79 @@
 								</div>
 								</div>
 								<div class="film-btn-container flag">
-									<div class="film-btn"><p>View Project</p></div>
+									<div class="film-btn" data-scroll="true" data-scroll-speed="2.5"><p>View Project</p></div>
 								</div>
 								
 							</div>
 						</div>
-					</div>
 					
-					<div class="prj3">
+					
+					<div class="prj3" data-scroll-section>
 						<div class="prj3-wrapper">
 							<div class="img-container">
 								<img
 									src="./images/poster_13214.png"
 									alt="callmePoster"
-									class="prj3-img1"
+									class="prj3-img1 flag tiltE"
+									data-scroll="true" data-scroll-speed="1.8"
 								/>
 								<img
 									src="./images/call-me-by-your-name-6.png"
 									alt="callme"
-									class="prj3-img2"
+									class="prj3-img2 flag"
+									data-scroll="true" data-scroll-speed="2"
 								/>
 							</div>
-							<div class="prj3-sub-title">
-								<div>
+							<div class="prj3-sub-title flag" data-scroll="true" data-scroll-speed="1.5">
+								
 									<p>
 										The poster call me by your name is designed based on
 										the sweetness of the two guys in the movie <br/> and typo style poster
 										design
 									</p>
-								</div>
+								
 							</div>
-							<div class="prj3-btn">
+							<div class="prj3-btn flag" data-scroll="true" data-scroll-speed="1.8">
 								<p>View Project</p>
 							</div>
 						</div>
 					</div>
-					<div class="another-area">
-						<div class="prj-name">
+					<div class="another-area" data-scroll-section>
+						<div class="prj-name flag" data-scroll="true" data-scroll-speed="0.5">
 							<p class="orange-text">logo</p>
 							<p class="and-letter">&</p>
 							<p class="orange-text">type mark</p>
 						</div>
 						<div class="gr-prj">
-							<div class="mega-logo">
-								<img src="./images/ID1.png" alt="mega-1" />
+							<div class="mega-logo flag tiltE">
+								<div data-scroll="true" data-intensity="-0.1" data-speedin="0.5" data-speedout="0.5" data-scroll-speed="-1.2" data-easing="Sine.easeOut">
+									<img src="./images/ID1.png" alt="mega-1"  />
+								</div>
 							</div>
-							<div class="pet-logo">
-								<img src="./images/NH.png" alt="NH" />
+							<div class="pet-logo flag tiltE">
+								<div data-scroll="true" data-intensity="-0.1" data-speedin="0.5" data-speedout="0.5" data-scroll-speed="-1.2" data-easing="Sine.easeOut">
+									<img src="./images/NH.png" alt="NH"  />
+								</div>
 							</div>
-							<div class="ds-idea">
-								<img src="./images/Mockup.png" alt="ds" />
+							<div class="ds-idea flag tiltE">
+								<div data-scroll="true" data-intensity="-0.1" data-speedin="0.5" data-speedout="0.5" data-scroll-speed="-1.2" data-easing="Sine.easeOut">
+									<img src="./images/Mockup.png" alt="ds" />
+								</div>
 							</div>
-							<div class="bike">
-								<img src="./images/bike.png" alt="bike" />
+							<div class="bike flag tiltE">
+								<div data-scroll="true" data-intensity="-0.1" data-speedin="0.5" data-speedout="0.5" data-scroll-speed="-1.2" data-easing="Sine.easeOut">
+									<img src="./images/bike.png" alt="bike"/>
+								</div>
 							</div>
-							<div class="octofa">
+							<div class="octofa flag tiltE">
 								<img src="./images/ID7.png" alt="mega-1" />
 							</div>
 						</div>
 						
 					</div>
 				</div>
-				<div class="vision-area">
-					<div class="toptitle">
+				<div class="vision-area" data-scroll-section>
+					<div class="toptitle flag" data-scroll="true" data-scroll-speed="1.2" data-easing="Sine.easeOut">
 						<img src="./images/dipo.svg" alt="dipo-logo" />
 						<div class="seperate"></div>
 						<div class="gr-title">
@@ -229,14 +248,14 @@
 						</div>
 					</div>
 					<div class="quote1">
-						<p class="spc-quote">
+						<p class="spc-quote flag">
 							DIP <h1 class="orangeO">O</h1>. is a design company,
 							with the aim of transforming your requirements into design
 							products. With the maxim Difference Make a point, we'll
 							help you create breakthrough designs out of simple things
 						</p>
 					</div>
-					<div class="quote2">
+					<div class="quote2 flag">
 						<p>
 							At DIPO, our creativity, distinction and responsibility to
 							customers are always on top of mind, we think that a brand
@@ -245,26 +264,26 @@
 						</p>
 					</div>
 				</div>
-				<div class="about-us-area">
+				<div class="about-us-area" data-scroll-section>
 					<div class="phong">
-						<img src="./images/phong.png" alt="phong">
+						<img src="./images/phong.png" class="flag tiltE" alt="phong">
 						<div class="phong-quote">
-							<h1>Le Thai Phong</h1>
-							<p>Graphic designer <br/>lehongphong270720@gmail.com<br/>" Creativity is nothing but a mind set free "</p>
+							<h1 class="flag">Le Thai Phong</h1>
+							<p class="flag">Graphic designer <br/>lehongphong270720@gmail.com<br/>" Creativity is nothing but a mind set free "</p>
 						</div>
 					</div>
 					<div class="dinh">
-						<img src="./images/dinh.png" alt="dinh"/>
+						<img src="./images/dinh.png" class="flag tiltE" alt="dinh"/>
 						<div class="dinh-quote">
-							<h1>Tran Manh Dinh</h1>
-							<p>Graphic designer<br/> mandinh@gmail.com<br/>"Just do it"</p>
+							<h1 class="flag">Tran Manh Dinh</h1>
+							<p class="flag">Graphic designer<br/> mandinh@gmail.com<br/>"Just do it"</p>
 						</div>
 					</div>
-					<img src="./images/about.svg" alt="about" class="about">
-					<img src="./images/us.svg" alt="us" class="us">
+					<img src="./images/about.svg" alt="about" class="about flag">
+					<img src="./images/us.svg" alt="us" class="us flag">
 				</div>
 			</div>
-			<div class="form">
+			<div class="form flag" data-scroll-section>
 				<h1>send us message</h1>
 				<input type="text" class="email">
 				<input type="text" class="message">
@@ -273,7 +292,7 @@
 				</div>
 				
 			</div>
-			<div class="footer">
+			<div class="footer" data-scroll-section>
 				<img src="./images/dipo.svg" alt="logo">
 				<div class="info">
 					<div class="expertise">
@@ -304,8 +323,33 @@
 
 			</div>
 		</div>
-		
+	</div>
 		<script>
+			
+
+
+			
+        			var scroll = new LocomotiveScroll({
+							el: document.querySelector('[data-scroll-container]'),
+							smooth: true,
+							multiplier:1,
+							smoothMobile: true,							
+					});
+					console.log('Create ne ',scroll)
+				
+					$('.tiltE').mouseenter(()=>{
+						$('.tiltE').tilt({
+							maxTilt:        20,
+							perspective:    1200,
+							easing:         "cubic-bezier(.03,.98,.52,.99)",
+							scale:          1, 
+							speed:          2000,
+							transition:     true,
+							reset:          true,
+                });
+					})	
+				
+			
 			// TweenMax.fromTo(
 			// 	'.hero-logo',
 			// 	0.5,
@@ -323,6 +367,7 @@
 			// 		yoyoEase: Expo.easeOut,
 			// 	}
 			// );
+
 			let cursor = $(".child-pointer");
 			let follower = $(".parent-pointer");
 			let flag = $(".flag");
@@ -358,12 +403,6 @@
 			});
 
 			
-			
-
-			
-
-
-
 			TweenMax.from('.hero-logo',1.5,{
 				right:'-10%',
 				opacity:0,
@@ -407,251 +446,30 @@
 				ease: Expo.easeInOut,
 				delay:0.7				
 			})
-			// TweenMax.fromTo(
-			// 	'.hero-logo',
-			// 	0.3,
-			// 	{
-			// 		scale: 1,					
-			// 	},
-			// 	{
-			// 		scale:1.05,
-			// 		ease: "slow(0.7,0.7,false)",
-			// 		opacity:1,
-			// 		delay: 1,
-			// 		repeat: -1,
-			// 		yoyo: true,
-			// 		yoyoEase: "slow(0.7,0.7,false)",
-			// 	}
-			// );
-			gsap.registerPlugin(ScrollTrigger);
-			let tl1 = gsap.timeline({
-				scrollTrigger: {
-					trigger:'.prj1',
-					start:'10% center',
-					end: '120% bottom',
-					//markers:true,
-					toggleActions:'start none resume none',	
-					 scrub:1				
+			TweenMax.fromTo(
+				'.hero-logo',
+				0.3,
+				{
+					scale: 1,					
 				},
-				
-			})
-			let tl2 = gsap.timeline({
-				scrollTrigger: {
-					trigger:'.prj1',
-					start: () =>innerWidth,
-					end:() =>innerWidth * 1.6,
-					toggleActions:'none none resume none',	
-					 scrub:1				
-				},
-			})
-			gsap.from('.prj1',{
-				backgroundColor: 'rgba(0, 0, 0, 1)',
-				scrollTrigger: {
-					trigger:'.intro-area__wrapper',
-					start:'80% center',
-					end: '190% bottom',
-					toggleActions:'none none resume none',	
-					scrub:3,
-					// pin:true,				
-				},
-			})
-			gsap.from('.layer',{
-				backgroundColor: 'rgba(0, 0, 0, 1)',
-				scrollTrigger: {
-					trigger:'.intro-area__wrapper',
-					start:'80% center',
-					end: '190% bottom',
-					toggleActions:'none none resume none',	
-					scrub:3,
-					//pin:true,				
-				},
-			})
-
-
-
-
-			tl1.from('.lord-poster',{
-					left:'-30%',
-				opacity:0,
-			 	duration:1.5,
-				ease: Expo.easeInOut,
-			},0);
-			
-			tl1.from ('.lord-title',{
-					left:'30%',
-					opacity:0,
-					duration:1.5,
-					 delay:0,
-					ease: Expo.easeInOut,
-			},0.5)
-			tl1.from ('.lord-sub-title',{
-					right:'-30%',
-					opacity:0,
-					duration:1.5,
-					 delay:0,
-					ease: Expo.easeInOut,
-			},0.8)
-			tl1.from ('.view-btn-ani',{
-					bottom:'-30%',
-					opacity:0,
-					duration:1.5,
-					 delay:0,
-					ease: Expo.easeInOut,
-			},1)
-			//Prj1 out
-			tl2.to('.lord-poster',{
-					left:'-30%',
-				opacity:0,
-			 	duration:1.5,
-				ease: Expo.easeInOut,
-			},0)
-			.to('.layer',{				
-				backgroundColor: 'rgba(0, 0, 0, 1)',			 	
-				ease: Expo.easeInOut,
-			},1)
-			.to ('.lord-title',{
-					left:'30%',
-					opacity:0,
-					duration:1.5,
-					 delay:0,
-					ease: Expo.easeInOut,
-			},0)
-			.to ('.lord-sub-title',{
-					right:'-30%',
-					opacity:0,
-					duration:1.5,
-					 delay:0,
-					ease: Expo.easeInOut,
-			},0)
-			.to ('.view-btn-ani',{
-					bottom:'-30%',
-					opacity:0,
-					duration:1.5,
-					 delay:0,
-					ease: Expo.easeInOut,
-			},0)
-			
-
-
-
-
-			gsap.to(".horizontal-gr", {
-				 xPercent: -100, 
-				 x: innerWidth,
-				// right:0,
-				//x:0,
-				ease: "none",
-				scrollTrigger: {
-					trigger: ".horizontal-gr",
-					start: "top top",
-					end: () => innerWidth * 1.8,
-					scrub: true,
-					pin: true,
-					anticipatePin: 1,
+				{
+					scale:1.05,
+					ease: "slow(0.7,0.7,false)",
+					opacity:1,
+					delay: 1,
+					repeat: -1,
+					yoyo: true,
+					yoyoEase: "slow(0.7,0.7,false)",
 				}
-			});
-			gsap.from('.film-img > img', {
-				top:'-100%',
-				opacity:0,
-				scrollTrigger: {
-					trigger: ".prj3",
-					start: '-250% center',
-					end: '-90% center',										
-					scrub:1
-				}
-			})
+			);
+			// TweenMax.from('.line-down',2,{
+			// 	top:'-100%',
+			// 	opacity:0,
+			// 	display: 'none',
+			// 	delay:0.7				
+			// })
 			
-			gsap.from('.ani-poster > img', {
-				left:'-50%',
-				opacity:0,
-				scrollTrigger: {
-					trigger: ".prj3",
-					start:'-120% center',
-					end: '-90% center',										
-					toggleActions: "restart none none reverse",
-					scrub:true
-				},
-				
-				
-			})
-			gsap.from('.film-subtitle > div', {
-				right:'-100%',
-				opacity:0,
-				scrollTrigger: {
-					trigger: ".prj3",
-					start:'-120% center',
-					end: '-90% center',										
-					// markers:true,
-					toggleActions: "restart none none reverse",
-					scrub:true
-				},
-				
-				
-			})
-			gsap.from('.film-btn', {
-				bottom:'-100%',
-				opacity:0,
-				scrollTrigger: {
-					trigger: ".prj3",
-					start:'-120% center',
-					end: '-90% center',										
-					toggleActions: "restart none none reverse",
-					scrub:true
-				},
-				
-				
-			})
-
-
-			let tl3 = gsap.timeline({
-				scrollTrigger: {
-					trigger:'.prj3',
-					start:'-65% center',
-					end: '+=100%',										
-					// markers:true,
-					toggleActions:'none none resume none',	
-					 scrub:1				
-				},
-			})
-			tl3.to('.ani-poster > img', {
-				left:'50%',
-				opacity:0,												
-			},0).to('.film-img > img', {
-				left:'-50%',
-				opacity:0,				
-			},0)
-			.to('.film-subtitle > div', {
-				right:'50%',
-				opacity:0,				
-			},0)
-			.to('.ani-poster > img', {
-				left:'50%',
-				opacity:0,												
-			},0)
-			
-			.to('.film-btn', {
-				bottom:'-200%',
-				opacity:0,				
-			},0)
-
-			let tl4 = gsap.timeline({
-				scrollTrigger: {
-					trigger:'.prj3',
-					start:'top center',
-					end: '20% center',															
-					toggleActions:'none none resume none',	
-					 scrub:3				
-				},
-			})
-			tl4.from('.prj3-img1', {
-				top:'-10%',
-				opacity:0,												
-			},0)
-			.from('.prj3-img2', {
-				top:'-10%',
-				opacity:0,												
-			},1)
-			
+						
 
 
 
